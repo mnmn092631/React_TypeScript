@@ -13,3 +13,7 @@
 
 - ValidationSample : input에 useRef 사용
 - ScrollBox : 컴포넌트에 useRef 사용, useRef를 props로 전달하기(React.forwardRef)
+
+### 06 컴포넌트 반복
+
+- IterationSample : 반복되는 데이터 렌더링
