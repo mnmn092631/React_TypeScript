@@ -17,3 +17,10 @@
 ### 06 컴포넌트 반복
 
 - IterationSample : 반복되는 데이터 렌더링
+
+### 08 Hooks
+
+- Counter : useState 사용하기
+- Info : useState를 여러번 사용하기, useEffect 사용하기
+- ReducerCount : useReducer를 사용하여 카운터 구현하기
+- ReducerInfo : useReducer를 사용하여 input 상태 관리하기
