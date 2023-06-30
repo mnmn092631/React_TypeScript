@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   html {
     font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
     -webkit-text-size-adjust: none;
     font-display: fallback;
   }
