@@ -24,4 +24,5 @@
 - Info : useState를 여러번 사용하기, useEffect 사용하기
 - ReducerCount : useReducer를 사용하여 카운터 구현하기
 - ReducerInfo : useReducer를 사용하여 input 상태 관리하기
-- Average : useMemo 사용하기, useCallback 사용하기
+- Average : useMemo 사용하기, useCallback 사용하기, useRef 사용하기
+- RefSample : useRef 로컬 변수 사용
