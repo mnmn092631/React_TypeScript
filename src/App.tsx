@@ -12,6 +12,7 @@ import Info from "./components/08/Info";
 import Counter from "./components/08/Counter";
 import ReducerCounter from "./components/08/ReducerCounter";
 import ReducerInfo from "./components/08/ReducerInfo";
+import Average from "./components/08/Average";
 
 function App() {
   // 05 > ScrollBox
@@ -61,7 +62,8 @@ function App() {
         {visible && <Info />}
       </div> */}
       {/* <ReducerCounter /> */}
-      <ReducerInfo />
+      {/* <ReducerInfo /> */}
+      <Average />
     </ThemeProvider>
   );
 }
