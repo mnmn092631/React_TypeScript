@@ -15,6 +15,7 @@ import ReducerInfo from "./components/08/ReducerInfo";
 import Average from "./components/08/Average";
 import RefSample from "./components/08/RefSample";
 import CustomHooksInfo from "./components/08/CustomHooksInfo";
+import StyledComponent from "./components/09/StyledComponent";
 
 function App() {
   // 05 > ScrollBox
@@ -67,7 +68,10 @@ function App() {
       {/* <ReducerInfo /> */}
       {/* <Average /> */}
       {/* <RefSample /> */}
-      <CustomHooksInfo />
+      {/* <CustomHooksInfo /> */}
+
+      {/* chapter 09 */}
+      <StyledComponent />
     </ThemeProvider>
   );
 }
