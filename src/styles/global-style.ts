@@ -20,6 +20,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: none;
     font-display: fallback;
   }
+  body{
+    background: #e9ecef;
+  }
   button {
     background: none;
     padding: 0;

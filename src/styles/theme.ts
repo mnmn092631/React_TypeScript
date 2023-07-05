@@ -1,15 +1,15 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   color: {
-    black: '#000',
-    white: 'fff',
-    purple: '#8661de',
-    blue: '#00bac7',
-    gray: '#f6f6f6',
-    green: '#07b495',
-    lightGreen: '#99ecdd',
-    darkGray: '#54595d',
+    black: "#000",
+    white: "#fff",
+    purple: "#8661de",
+    blue: "#00bac7",
+    gray: "#f6f6f6",
+    green: "#07b495",
+    lightGreen: "#99ecdd",
+    darkGray: "#54595d",
   },
 };
 
