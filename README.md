@@ -35,3 +35,5 @@
 ### 10 일정 관리 웹 애플리케이션 만들기
 
 - TodoTemplate, TodoInsert, TodoList, TodoListItem
+
+### 11 컴포넌트 성능 최적화

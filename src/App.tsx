@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState, useReducer } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/global-style";
 import { theme } from "./styles/theme";
@@ -16,10 +16,36 @@ import Average from "./components/08/Average";
 import RefSample from "./components/08/RefSample";
 import CustomHooksInfo from "./components/08/CustomHooksInfo";
 import StyledComponent from "./components/09/StyledComponent";
-import TodoTemplate from "./components/10/TodoTemplate";
-import TodoInsert from "./components/10/TodoInsert";
-import TodoList from "./components/10/TodoList";
-import { TodoType } from "./components/10/type";
+import TodoTemplate from "./components/10_11/TodoTemplate";
+import TodoInsert from "./components/10_11/TodoInsert";
+import TodoList from "./components/10_11/TodoList";
+import { ActionType, TodoType } from "./shared/type";
+
+// 11
+function createBulkTodos() {
+  const array: Array<TodoType> = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할 일 ${i}`,
+      checked: false,
+    });
+  }
+  return array;
+}
+
+function todoReducer(todos: Array<TodoType>, action: ActionType) {
+  switch (action.type) {
+    case "INSERT":
+      return todos.concat(action.todo);
+    case "REMOVE":
+      return todos.filter(todo => todo.id !== action.id);
+    case "TOGGLE":
+      return todos.map(todo => (todo.id === action.id ? { ...todo, checked: !todo.checked } : todo));
+    default:
+      return todos;
+  }
+}
 
 function App() {
   // 05 > ScrollBox
@@ -34,41 +60,32 @@ function App() {
   // 08 > Info
   // const [visible, setVisible] = useState(false);
 
-  // 10
-  const [todos, setTodos] = useState([
-    { id: 1, text: "리액트의 기초 알아보기", checked: true },
-    { id: 2, text: "컴포넌트 스타일링해 보기", checked: true },
-    { id: 3, text: "일정 관리 앱 만들어 보기", checked: false },
-  ]);
+  // 10, 11
+  // const [todos, setTodos] = useState(createBulkTodos);
+  const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
 
-  const nextId = useRef(4);
+  const nextId = useRef(2501);
 
-  const onInsert = useCallback(
-    (text: string) => {
-      const todo: TodoType = {
-        id: nextId.current,
-        text,
-        checked: false,
-      };
-      setTodos(todos.concat(todo));
-      nextId.current += 1;
-    },
-    [todos],
-  );
+  const onInsert = useCallback((text: string) => {
+    const todo: TodoType = {
+      id: nextId.current,
+      text,
+      checked: false,
+    };
+    // setTodos(todos => todos.concat(todo));
+    dispatch({ type: "INSERT", todo });
+    nextId.current += 1;
+  }, []);
 
-  const onRemove = useCallback(
-    (id: number) => {
-      setTodos(todos.filter(todo => todo.id !== id));
-    },
-    [todos],
-  );
+  const onRemove = useCallback((id: number) => {
+    // setTodos(todos => todos.filter(todo => todo.id !== id));
+    dispatch({ type: "REMOVE", id });
+  }, []);
 
-  const onToggle = useCallback(
-    (id: number) => {
-      setTodos(todos.map(todo => (todo.id === id ? { ...todo, checked: !todo.checked } : todo)));
-    },
-    [todos],
-  );
+  const onToggle = useCallback((id: number) => {
+    // setTodos(todos => todos.map(todo => (todo.id === id ? { ...todo, checked: !todo.checked } : todo)));
+    dispatch({ type: "TOGGLE", id });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -113,7 +130,7 @@ function App() {
       {/* chapter 09 */}
       {/* <StyledComponent /> */}
 
-      {/* chapter 10 */}
+      {/* chapter 10, 11 */}
       <TodoTemplate>
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />

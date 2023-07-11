@@ -1,7 +1,7 @@
 import React from "react";
 import { MdCheckBoxOutlineBlank, MdCheckBox, MdRemoveCircleOutline } from "react-icons/md";
+import { TodoType } from "src/shared/type";
 import styled from "styled-components";
-import { TodoType } from "./type";
 
 interface ItemProps {
   todo: TodoType;
@@ -71,4 +71,4 @@ const TodoListItem = ({ todo, onRemove, onToggle }: ItemProps) => {
   );
 };
 
-export default TodoListItem;
+export default React.memo(TodoListItem);

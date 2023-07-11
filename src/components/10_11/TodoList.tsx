@@ -1,7 +1,7 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 import styled from "styled-components";
-import { TodoType } from "./type";
+import { TodoType } from "src/shared/type";
 
 interface ListProps {
   todos: Array<TodoType>;
@@ -25,4 +25,4 @@ const TodoList = ({ todos, onRemove, onToggle }: ListProps) => {
   );
 };
 
-export default TodoList;
+export default React.memo(TodoList);
