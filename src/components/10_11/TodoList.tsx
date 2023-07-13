@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useCallback } from "react";
 import TodoListItem from "./TodoListItem";
 import styled from "styled-components";
 import { TodoType } from "src/shared/type";
+import { List, ListRowProps } from "react-virtualized";
 
 interface ListProps {
   todos: Array<TodoType>;
@@ -16,11 +17,25 @@ const ListWrapper = styled.div`
 `;
 
 const TodoList = ({ todos, onRemove, onToggle }: ListProps) => {
+  const rowRenderer = useCallback(
+    ({ index, key, style }: ListRowProps) => {
+      const todo = todos[index];
+      return <TodoListItem todo={todo} key={key} onRemove={onRemove} onToggle={onToggle} style={style} />;
+    },
+    [onRemove, onToggle, todos],
+  );
   return (
     <ListWrapper>
-      {todos.map(todo => (
-        <TodoListItem todo={todo} key={todo.id} onRemove={onRemove} onToggle={onToggle} />
-      ))}
+      <List
+        className="TodoList"
+        width={512}
+        height={513}
+        rowCount={todos.length}
+        rowHeight={57}
+        rowRenderer={rowRenderer}
+        list={todos}
+        style={{ outline: "none" }}
+      />
     </ListWrapper>
   );
 };

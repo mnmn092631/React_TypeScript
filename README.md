@@ -37,3 +37,5 @@
 - TodoTemplate, TodoInsert, TodoList, TodoListItem
 
 ### 11 컴포넌트 성능 최적화
+
+- TodoTemplate, TodoInsert, TodoList, TodoListItem : React.memo, useState 함수형 업데이트, useReducer 사용하기, react-virtualized

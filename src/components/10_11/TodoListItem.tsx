@@ -7,6 +7,7 @@ interface ItemProps {
   todo: TodoType;
   onRemove: (id: number) => void;
   onToggle: (id: number) => void;
+  style: React.CSSProperties;
 }
 
 const ItemWrapper = styled.div`
@@ -57,9 +58,9 @@ const ItemWrapper = styled.div`
   }
 `;
 
-const TodoListItem = ({ todo, onRemove, onToggle }: ItemProps) => {
+const TodoListItem = ({ todo, onRemove, onToggle, style }: ItemProps) => {
   return (
-    <ItemWrapper>
+    <ItemWrapper style={style}>
       <div className={todo.checked ? "checked" : ""} onClick={() => onToggle(todo.id)}>
         {todo.checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div>{todo.text}</div>
