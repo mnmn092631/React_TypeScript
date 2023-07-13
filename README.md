@@ -39,3 +39,7 @@
 ### 11 컴포넌트 성능 최적화
 
 - TodoTemplate, TodoInsert, TodoList, TodoListItem : React.memo, useState 함수형 업데이트, useReducer 사용하기, react-virtualized
+
+### 12 immer를 사용하여 더 쉽게 불변성 유지하기
+
+- App > 12 : immer 사용
