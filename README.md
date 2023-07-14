@@ -43,3 +43,11 @@
 ### 12 immer를 사용하여 더 쉽게 불변성 유지하기
 
 - App > 12 : immer 사용
+
+### 13 리액트 라우터로 SPA 개발하기
+
+- Home : index 페이지
+- About : 쿼리스트링, useLocation, useSearchParams
+- Profile : URL 파라미터, useParams
+- Articles, Article : 중첩된 라우트
+- Layout : 공통 레이아웃 컴포넌트
