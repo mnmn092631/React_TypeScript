@@ -29,6 +29,8 @@ import Articles from "./components/13/Articles";
 import Article from "./components/13/Article";
 import Layout from "./Layout";
 import NotFound from "./components/13/NotFound";
+import Login from "./components/13/Login";
+import MyPage from "./components/13/MyPage";
 
 // 11
 // function createBulkTodos() {
@@ -239,6 +241,8 @@ function App() {
         <Route path="/articles" element={<Articles />}>
           <Route path=":id" element={<Article />} />
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
