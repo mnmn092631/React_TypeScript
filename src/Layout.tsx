@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -9,9 +9,22 @@ const Header = styled.header`
 `;
 
 const Layout = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  const goArticles = () => {
+    navigate("/articles", { replace: true });
+  };
+
   return (
     <div>
-      <Header>Header</Header>
+      <Header>
+        <button onClick={goBack}>뒤로가기</button>
+        <button onClick={goArticles}>게시글 목록</button>
+      </Header>
       <main>
         <Outlet />
       </main>

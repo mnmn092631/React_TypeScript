@@ -50,4 +50,4 @@
 - About : 쿼리스트링, useLocation, useSearchParams
 - Profile : URL 파라미터, useParams
 - Articles, Article : 중첩된 라우트
-- Layout : 공통 레이아웃 컴포넌트
+- Layout : 공통 레이아웃 컴포넌트, useNavigate
