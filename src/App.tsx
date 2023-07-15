@@ -28,6 +28,7 @@ import Profile from "./components/13/Profile";
 import Articles from "./components/13/Articles";
 import Article from "./components/13/Article";
 import Layout from "./Layout";
+import NotFound from "./components/13/NotFound";
 
 // 11
 // function createBulkTodos() {
@@ -238,6 +239,7 @@ function App() {
         <Route path="/articles" element={<Articles />}>
           <Route path=":id" element={<Article />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
   );

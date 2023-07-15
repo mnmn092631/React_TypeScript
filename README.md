@@ -52,3 +52,4 @@
 - Articles : 중첩된 라우트, NavLink
 - Article : 중첩된 라우트
 - Layout : 공통 레이아웃 컴포넌트, useNavigate
+- NotFound : NotFound 페이지
