@@ -172,24 +172,24 @@ function App() {
       {/* <GlobalStyle /> */}
       <Routes>
         {/* chapter 03 */}
-        {/* <Route path="/03/MyComponent" element={<MyComponent name="React">children</MyComponent>} /> */}
-        {/* <Route path="/03/Say" element={<Say />} /> */}
+        {/* <MyComponent name="React">children</MyComponent> */}
+        {/* <Say /> */}
 
         {/* chapter 04 */}
-        {/* <Route path="/04/EventPractice" element={<EventPractice />} /> */}
+        {/* <EventPractice /> */}
 
         {/* chapter 05 */}
-        {/* <Route path="/05/ValidationSample" element={<ValidationSample />} /> */}
+        {/* <ValidationSample /> */}
         {/* <div>
         <ScrollBox ref={scrollRef} />
         <button onClick={scrollToBottom}>맨 밑으로</button>
         </div> */}
 
         {/* chapter 06 */}
-        {/* <Route path="/06/IterationSample" element={<IterationSample />} /> */}
+        {/* <IterationSample /> */}
 
         {/* chapter 08 */}
-        {/* <Route path="/08/Counter" element={<Counter />} /> */}
+        {/* <Counter /> */}
         {/* <div>
         <button
           onClick={() => {
